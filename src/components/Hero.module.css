@@ -1,0 +1,116 @@
+/* ============================================
+   Hero — seção de abertura
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+/* ---- Background ---- */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.9);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+/* ---- Conteúdo central ---- */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 1100px;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+}
+
+.headlineLine {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 11vw, 156px);
+  font-weight: var(--font-weight-medium);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.subtitle {
+  margin-top: 32px;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-off-white);
+  letter-spacing: -0.01em;
+}
+
+/* ---- Plus-bar decorativo ---- */
+.plusBar {
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.plusBarItem {
+  width: 12px;
+  height: 12px;
+  background: var(--color-white);
+  opacity: 0.7;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 809px) {
+  .bgImage {
+    object-position: 63.5% 50.3%;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .plusBar {
+    bottom: 32px;
+    gap: 60px;
+  }
+
+  /* Esconde o 3º item no phone, como no original */
+  .plusBarItem:nth-child(3) {
+    display: none;
+  }
+}

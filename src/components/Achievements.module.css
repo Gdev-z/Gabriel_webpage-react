@@ -1,0 +1,81 @@
+.section {
+  padding: var(--section-padding-y) 24px;
+  background: var(--color-black);
+}
+
+.inner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-silver);
+  margin-bottom: 16px;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.subLabel {
+  display: block;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: var(--color-muted);
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6.5vw, 88px);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.space {
+  display: inline-block;
+}
+
+.subHeader {
+  margin-top: 32px;
+  font-size: clamp(16px, 1.8vw, 22px);
+  color: var(--color-off-white);
+  max-width: 640px;
+}
+
+@media (max-width: 809px) {
+  .inner {
+    text-align: center;
+  }
+  .label,
+  .subLabel {
+    justify-content: center;
+    align-items: center;
+  }
+  .subHeader {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

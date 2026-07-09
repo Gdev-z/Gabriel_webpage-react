@@ -1,0 +1,114 @@
+.section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 24px;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  z-index: 0;
+  will-change: transform;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.titleLine {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 7vw, 96px);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+}
+
+.titleLine[data-accent] {
+  color: var(--color-orange);
+}
+
+.subtitle {
+  margin-top: 32px;
+  font-size: clamp(15px, 1.6vw, 19px);
+  color: var(--color-off-white);
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+.buttons {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+  text-transform: lowercase;
+  color: var(--color-white);
+  transition: color 0.2s ease;
+}
+
+.button:hover {
+  color: var(--color-orange);
+}
+
+.buttonUnderline {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-orange);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.button:hover .buttonUnderline {
+  transform: scaleX(1.1);
+}
+
+@media (max-width: 809px) {
+  .section {
+    min-height: auto;
+    padding: 80px 20px;
+  }
+}

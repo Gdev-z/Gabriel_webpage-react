@@ -1,0 +1,51 @@
+.section {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-black);
+  overflow: hidden;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.pair {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  width: 100%;
+}
+
+.image {
+  width: 350px;
+  height: 540px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (max-width: 1199px) {
+  .image {
+    width: 250px;
+    height: 385px;
+  }
+}
+
+@media (max-width: 809px) {
+  .image {
+    width: 180px;
+    height: 277px;
+  }
+  .pair {
+    gap: 12px;
+  }
+}

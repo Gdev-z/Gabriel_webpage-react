@@ -1,0 +1,219 @@
+/* ============================================
+   Navigation — overlay menu fullscreen
+   ============================================ */
+
+.logo {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---- Burger fixo no canto superior direito ---- */
+.burger {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+}
+
+.burgerLine {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--color-orange);
+  transform-origin: center;
+  transition: transform 0.3s var(--ease-out-expo), opacity 0.3s ease;
+}
+
+.burgerLine[data-open='true']:nth-child(1) {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.burgerLine[data-open='true']:nth-child(2) {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* ---- Overlay ---- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: stretch;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 110px 48px 48px;
+  overflow-y: auto;
+}
+
+/* ---- Topo: social + timezone ---- */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.social {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--color-off-white);
+}
+
+.social a {
+  transition: color 0.2s ease;
+}
+
+.social a:hover {
+  color: var(--color-orange);
+}
+
+.timezone {
+  text-align: right;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.time {
+  display: block;
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-white);
+  font-size: 16px;
+}
+
+.tzLabel {
+  display: block;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  max-width: 220px;
+  line-height: 1.5;
+}
+
+.accent {
+  color: var(--color-orange);
+}
+
+/* ---- Menu principal ---- */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: center;
+  text-align: center;
+}
+
+.menuLink {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 8vw, 88px);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.05;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.menuLink:hover {
+  color: var(--color-orange);
+}
+
+/* ---- Legal ---- */
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legalLink {
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--color-white);
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 809px) {
+  .logo,
+  .burger {
+    top: 20px;
+  }
+  .logo {
+    left: 20px;
+    width: 28px;
+    height: 28px;
+  }
+  .burger {
+    right: 20px;
+  }
+
+  .content {
+    padding: 80px 24px 32px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .timezone {
+    text-align: left;
+  }
+
+  .status {
+    max-width: none;
+  }
+
+  .menuLink {
+    font-size: clamp(32px, 12vw, 56px);
+  }
+}
