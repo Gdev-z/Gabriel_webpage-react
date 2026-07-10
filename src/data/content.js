@@ -1,20 +1,21 @@
 /* ============================================
    CONTEÚDO DO SITE — tudo editável em um lugar.
-   Rebranding: Gabriel Zanon — Desenvolvedor Full Stack.
+   Rebranding: Gabriel Zanon — Desenvolvedor Full Stack
+   product-minded (design + código + deploy).
    ============================================ */
 
 export const site = {
   name: 'Gabriel Zanon',
   title: 'Gabriel Zanon — Desenvolvedor Full Stack',
   description:
-    'Gabriel Zanon — Desenvolvedor Full Stack. Aplicações robustas, interfaces modernas, do código ao deploy.',
+    'Gabriel Zanon — Desenvolvedor Full Stack. Eu desenho a interface, construo o back-end e coloco no ar: ponta a ponta.',
   timezone: 'America/Sao_Paulo',
   timezoneLabel: 'Timezone (GMT-3)',
   email: 'gabrielzanon.dev@gmail.com',
   phone: '+55 13 99758-1820',
   whatsapp: '5513997581820',
   copyright: '© 2026 Gabriel Zanon — Todos os direitos reservados.',
-  legalText: 'Serviços de desenvolvimento e design por Gabriel Zanon.',
+  legalText: 'Desenvolvimento e design de produtos digitais por Gabriel Zanon.',
 }
 
 /* ---- Links sociais (navegação + footer) ---- */
@@ -38,30 +39,31 @@ export const menuLinks = [
   { label: 'Início', href: '#top' },
   { label: 'Sobre', href: '#introduction' },
   { label: 'Projetos', href: '#highlights' },
-  { label: 'Serviços', href: '#achievements' },
+  { label: 'Como trabalho', href: '#achievements' },
   { label: 'Contato', href: '#footer' },
 ]
 
 /* ---- Links legais ---- */
 export const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Disclaimer', href: '#' },
+  { label: 'Privacidade', href: '#' },
+  { label: 'Termos', href: '#' },
+  { label: 'Aviso', href: '#' },
 ]
 
 /* ---- Hero ---- */
 export const hero = {
-  headlineLines: ['Código que', 'funciona.'],
-  subtitle: 'Desenvolvedor Full Stack — React, Node, APIs e tudo entre o front e o back.',
+  headlineLines: ['Produtos digitais', 'de ponta a ponta.'],
+  subtitle:
+    'Desenvolvedor Full Stack product-minded. Do wireframe ao deploy: design, front, back-end e hospedagem com uma pessoa só.',
 }
 
 /* ---- Intro ---- */
 export const intro = {
   lines: [
-    { text: 'Aplicações que' },
-    { text: 'escalam com' },
-    { text: 'performance' },
-    { text: 'e propósito.' },
+    { text: 'Você tem a ideia.'},
+    { text: 'Eu cuido do resto:'},
+    { text: 'design, código'},
+    { text: 'e deploy.'},
   ],
 }
 
@@ -79,7 +81,7 @@ export const scrollingImages = [
       src: 'assets/project-girl-vr.jpeg',
       alt: 'Experiência imersiva em VR',
     },
-    image2: { src: 'assets/bg-art-bw.webp', alt: 'Design de interface' },
+    image2: { src: 'assets/bg-art-bw.jpg', alt: 'Design de interface' },
   },
   {
     image1: {
@@ -96,50 +98,51 @@ export const scrollingImages = [
 /* ---- Project Highlights (3 cards) ---- */
 export const projects = [
   {
-    name: 'Identidade Visual',
-    client: 'Design + Branding',
-    role: 'UI/UX Design — Figma + Illustrator + Photoshop',
-    image: { src: 'assets/bg-abstract-shapes.png', alt: 'Plataforma de e-commerce' },
+    name: 'Marca que vende',
+    client: 'Identidade + Site',
+    role: 'Design e front-end construídos do zero',
+    image: { src: 'assets/bg-abstract-shapes.png', alt: 'Identidade visual e site' },
     href: '#',
   },
   {
-    name: 'Proteção de Dados',
-    client: 'LGPD & Compliance',
-    role: 'termos de uso + política de privacidade — React + Node.js',
-    image: { src: 'assets/logo-arpeggio-nav.jpg', alt: 'Dashboard em tempo real' },
+    name: 'App dentro da lei',
+    client: 'LGPD & Termos',
+    role: 'Back-end seguro + documentação de compliance',
+    image: { src: 'assets/logo-arpeggio-nav.jpg', alt: 'Plataforma em conformidade' },
     href: '#',
   },
   {
-    name: 'Acessibilidade e SEO',
-    client: 'Web App Responsivo',
-    role: 'Full Stack Development — React + Node.js + PostgreSQL',
+    name: 'Site que aparece',
+    client: 'SEO & Acessibilidade',
+    role: 'Full Stack + otimização para busca',
     image: {
       src: 'assets/hero-abstract.jpg',
-      alt: 'Aplicativo mobile',
+      alt: 'Site otimizado e acessível',
     },
     href: '#',
   },
 ]
 
-/* ---- Achievements ---- */
+/* ---- Achievements ("Como trabalho") ---- */
 export const achievements = {
-  label: 'Experiência',
-  subLabel: 'stack & ferramentas',
-  headline: 'Cada linha de código resolve um problema real',
-  subHeader: 'Back-end, front-end, mobile, APIs, cloud — entregas que funcionam em produção.',
+  label: 'Como trabalho',
+  subLabel: 'do briefing ao deploy',
+  headline: 'Menos burocracia. Mais produto nas mãos do usuário.',
+  subHeader:
+    'Eu assumo o projeto inteiro — front, back-end, mobile, APIs e nuvem — pra você não correr atrás de três fornecedores.',
 }
 
 /* ---- Video Reel / CTA final ---- */
 export const videoReel = {
   titleLines: [
-    { text: 'Tem um projeto?' },
-    { text: 'Vamos construir.', accent: true },
+    { text: 'Tem um projeto', accent: false },
+    { text: 'pra gente construir?', accent: true },
   ],
   subtitle:
-    'Precisa de um dev que entenda o projeto inteiro? Do wireframe ao deploy, eu entrego.',
+    'Me conta o que você precisa. Eu traduzo em código, design e deploy.',
   buttons: [
-    { label: 'fale comigo', href: 'https://wa.me/5513997581820' },
-    { label: 'enviar email', href: 'mailto:gabrielzanon.dev@gmail.com' },
+    { label: 'chamar no WhatsApp', href: 'https://wa.me/5513997581820' },
+    { label: 'enviar um email', href: 'mailto:gabrielzanon.dev@gmail.com' },
   ],
 }
 
@@ -151,24 +154,19 @@ export const logoTicker = {
 /* ---- Footer ---- */
 export const footer = {
   locationText:
-    'Desenvolvedor Full Stack disponível para projetos remotos ou presenciais.',
+    'Aberto a projetos remotos e presenciais — Brasil e exterior.',
   menuBar1: [
     { label: 'Início', href: '#top' },
     { label: 'Projetos', href: '#highlights' },
     { label: 'Sobre', href: '#introduction' },
-    { label: 'Serviços', href: '#achievements' },
+    { label: 'Como trabalho', href: '#achievements' },
     { label: 'Contato', href: '#footer' },
   ],
   newsletter: {
-    title: 'Fique por dentro',
+    title: 'Receba dicas de produto e dev',
     subtitle:
-      'Receba novidades sobre projetos, dicas de dev e atualizações direto no seu email.',
-    secondary: 'Sem spam. Apenas conteúdo relevante.',
+      'Um email por mês com o que aprendi construindo produtos de verdade.',
+    secondary: 'Sem spam. Apenas conteúdo que vale a leitura.',
     inputPlaceholder: 'Seu melhor email',
   },
-  // menuBar2: [
-  //   { label: 'Privacy Policy', href: '#' },
-  //   { label: 'Terms of Service', href: '#' },
-  //   { label: 'Disclaimer', href: '#' },
-  // ],
 }

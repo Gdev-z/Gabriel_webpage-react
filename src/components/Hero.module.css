@@ -11,6 +11,7 @@
   justify-content: center;
   overflow: hidden;
   background: var(--color-black);
+  perspective: 1000px; /* habilita tilt 3D sutil no filho */
 }
 
 /* ---- Background ---- */
@@ -72,6 +73,15 @@
   font-weight: var(--font-weight-regular);
   color: var(--color-off-white);
   letter-spacing: -0.01em;
+}
+
+/* ---- Logo central (mouse parallax invertido) ---- */
+.logoSvg {
+  width: clamp(140px, 35vw, 1280px);
+  height: auto;
+  margin-bottom: 32px;
+  will-change: transform;
+  pointer-events: none; /* não atrapalha o mousemove */
 }
 
 /* ---- Plus-bar decorativo ---- */
