@@ -119,7 +119,7 @@ export const projects = [
       src: 'assets/hero-abstract.jpg',
       alt: 'Site otimizado e acessível',
     },
-    href: '#',
+    href: 'https://compativeis-v1.vercel.app/',
   },
 ]
 
