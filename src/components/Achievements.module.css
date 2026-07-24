@@ -1,6 +1,17 @@
 .section {
   padding: var(--section-padding-y) 24px;
+  position: relative;
   background: var(--color-black);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
 }
 
 .inner {

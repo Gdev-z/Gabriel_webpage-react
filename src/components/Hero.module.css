@@ -13,6 +13,16 @@
   background: var(--color-black);
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
 /* ---- Background Image — Anchored Right ---- */
 .bgWrapper {
   position: absolute;
