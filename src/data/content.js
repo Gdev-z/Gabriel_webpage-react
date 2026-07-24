@@ -75,26 +75,26 @@ export const intro = {
 /* ---- Scrolling Images (3 pares com parallax) ---- */
 export const scrollingImages = [
   {
-    image1: { src: 'assets/project-car-top.jpeg', alt: 'Projeto automotivo' },
+    image1: { src: 'assets/gallery-automotive.jpeg', alt: 'Projeto automotivo' },
     image2: {
-      src: 'assets/product-pouch.jpeg',
+      src: 'assets/gallery-product-design.jpeg',
       alt: 'Design de produto digital',
     },
   },
   {
     image1: {
-      src: 'assets/project-girl-vr.jpeg',
+      src: 'assets/gallery-vr-experience.jpeg',
       alt: 'Experiência imersiva em VR',
     },
-    image2: { src: 'assets/bg-art-bw.jpg', alt: 'Design de interface' },
+    image2: { src: 'assets/gallery-ui-design.jpg', alt: 'Design de interface' },
   },
   {
     image1: {
-      src: 'assets/project-cube-mockup.jpeg',
+      src: 'assets/gallery-3d-mockup.jpeg',
       alt: 'Mockup de aplicação 3D',
     },
     image2: {
-      src: 'assets/mockup-iphone-grid.jpeg',
+      src: 'assets/gallery-mobile-app.jpeg',
       alt: 'Aplicativo mobile responsivo',
     },
   },
@@ -107,7 +107,7 @@ export const projects = [
     client: 'SEO & Acessibilidade',
     role: 'Full Stack + otimização para busca',
     image: {
-      src: 'assets/hero-abstract.jpg',
+      src: 'assets/project-compativel.jpg',
       alt: 'Site otimizado e acessível',
     },
     href: 'https://compativeis-v1.vercel.app/',
@@ -123,7 +123,7 @@ export const projects = [
     name: 'App dentro da lei',
     client: 'LGPD & Termos',
     role: 'Back-end seguro + documentação de compliance',
-    image: { src: 'assets/logo-arpeggio-nav.jpg', alt: 'Plataforma em conformidade' },
+    image: { src: 'assets/project-lgpd.jpg', alt: 'Plataforma em conformidade' },
     href: '#',
   },
 ]

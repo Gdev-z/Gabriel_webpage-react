@@ -25,7 +25,7 @@ export default function VideoReel() {
     <section ref={ref} className={styles.section}>
       {/* Background image com parallax de scale */}
       <motion.img
-        src="assets/team-office-presentation.webp"
+        src="assets/team-photo.webp"
         alt=""
         className={styles.bgImage}
         style={{ scale: bgScale }}

@@ -96,7 +96,7 @@ export default function Footer() {
               aria-label="Email"
             />
             <button type="submit" className={styles.newsletterSubmit} aria-label="Subscribe">
-              <img src="assets/chevron-left.svg" alt="" loading="lazy" />
+              <img src="assets/icon-chevron-left.svg" alt="" loading="lazy" />
             </button>
           </form>
         </motion.div>
@@ -123,7 +123,7 @@ export default function Footer() {
                 className={styles.socialLink}
               >
                 <span>{s.name}</span>
-                <img src="assets/chevron-right.svg" alt="" loading="lazy" />
+                <img src="assets/icon-chevron-right.svg" alt="" loading="lazy" />
               </a>
             </li>
           ))}
@@ -146,7 +146,7 @@ export default function Footer() {
 
       {/* Back to top */}
       <a href="#top" className={styles.backToTop} aria-label="Scroll back to top">
-        <img src="assets/chevron-up.svg" alt="" loading="lazy" />
+        <img src="assets/icon-chevron-up.svg" alt="" loading="lazy" />
       </a>
     </footer>
   )

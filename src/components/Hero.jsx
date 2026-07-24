@@ -55,7 +55,7 @@ export default function Hero() {
         style={reduceMotion ? {} : { y: bgY }}
       >
         <img
-          src="assets/hero-background.jpg"
+          src="assets/hero-bg.jpg"
           alt=""
           className={styles.bgImage}
           fetchPriority="high"
@@ -109,7 +109,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
         >
           <motion.img
-            src="assets/logoG.svg"
+            src="assets/logo.svg"
             alt="Gabriel Zanon"
             className={styles.logoSvg}
             style={{ x: reduceMotion ? 0 : logoX, y: reduceMotion ? 0 : logoY }}

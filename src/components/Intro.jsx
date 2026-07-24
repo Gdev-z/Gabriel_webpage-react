@@ -33,11 +33,11 @@ export default function Intro() {
         viewport={viewportOnce}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* TODO Etapa 3: apontar para assets/video-promo.mp4 local */}
+        {/* TODO Etapa 3: apontar para assets/promo-video.mp4 local */}
         <video
           className={styles.video}
-          src="assets/video-promo.mp4"
-          poster="assets/hero-video-poster.jpg"
+          src="assets/promo-video.mp4"
+          poster="assets/video-poster.jpg"
           autoPlay
           muted
           loop
