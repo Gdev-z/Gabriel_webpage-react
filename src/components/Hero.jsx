@@ -12,10 +12,9 @@ import { staggerContainer, staggerItem } from '../styles/animations'
 import styles from './Hero.module.css'
 
 /* ============================================
-   Hero — Split / Two-Column Asymmetric Layout
-   - Left: Headline + Subtitle + CTA
-   - Right: Logo with mouse parallax
-   - Background with subtle parallax
+   Hero — Asymmetric Layout (40/60 split)
+   Left: Text content (headline, subtitle, CTA)
+   Right: Background image anchored + offset
    ============================================ */
 
 export default function Hero() {
@@ -24,41 +23,36 @@ export default function Hero() {
     target: ref,
     offset: ['start start', 'end start'],
   })
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
+  const reduceMotion = useReducedMotion()
 
   // Mouse parallax for logo
   const pointerX = useMotionValue(0)
   const pointerY = useMotionValue(0)
-
-  const springX = useSpring(pointerX, { stiffness: 150, damping: 18, mass: 0.4 })
-  const springY = useSpring(pointerY, { stiffness: 150, damping: 18, mass: 0.4 })
-
-  const logoX = useTransform(springX, [-0.5, 0.5], [20, -20])
-  const logoY = useTransform(springY, [-0.5, 0.5], [15, -15])
-
-  const reduceMotion = useReducedMotion()
+  const springX = useSpring(pointerX, { stiffness: 120, damping: 20, mass: 0.5 })
+  const springY = useSpring(pointerY, { stiffness: 120, damping: 20, mass: 0.5 })
+  const logoX = useTransform(springX, [-0.5, 0.5], [25, -25])
+  const logoY = useTransform(springY, [-0.5, 0.5], [18, -18])
 
   useEffect(() => {
     if (reduceMotion) return
-
     function onMouseMove(e) {
       pointerX.set(e.clientX / window.innerWidth - 0.5)
       pointerY.set(e.clientY / window.innerHeight - 0.5)
     }
-
     window.addEventListener('mousemove', onMouseMove)
     return () => window.removeEventListener('mousemove', onMouseMove)
   }, [pointerX, pointerY, reduceMotion])
 
   return (
     <section ref={ref} className={styles.hero} id="hero">
-      {/* Background */}
+      {/* Background Image — Anchored Right */}
       <motion.div
         className={styles.bgWrapper}
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.4, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
-        style={{ y: bgY }}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.2, ease: [0.85, 0, 0.15, 1], delay: 0.2 }}
+        style={reduceMotion ? {} : { y: bgY }}
       >
         <img
           src="assets/hero-background.jpg"
@@ -69,14 +63,14 @@ export default function Hero() {
         <div className={styles.bgOverlay} />
       </motion.div>
 
-      {/* Content Grid */}
+      {/* Content */}
       <div className={styles.container}>
         {/* Left Column — Text */}
         <motion.div
           className={styles.textColumn}
           initial="hidden"
           animate="visible"
-          variants={staggerContainer(0.12, 1.2)}
+          variants={staggerContainer(0.1, 1)}
         >
           <motion.span className={styles.label} variants={staggerItem}>
             {hero.label}
@@ -107,16 +101,16 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column — Visual */}
+        {/* Right Column — Visual Anchor (logo floating over image) */}
         <motion.div
           className={styles.visualColumn}
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
         >
           <motion.img
             src="assets/logoG.svg"
-            alt="Gabriel Zanon — Logo"
+            alt="Gabriel Zanon"
             className={styles.logoSvg}
             style={{ x: reduceMotion ? 0 : logoX, y: reduceMotion ? 0 : logoY }}
           />

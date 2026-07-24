@@ -1,5 +1,6 @@
 /* ============================================
-   Hero — Split / Two-Column Asymmetric Layout
+   Hero — Asymmetric Layout (40/60 split)
+   Text left (40%), image right (60%) anchored
    ============================================ */
 
 .hero {
@@ -12,10 +13,13 @@
   background: var(--color-black);
 }
 
-/* ---- Background ---- */
+/* ---- Background Image — Anchored Right ---- */
 .bgWrapper {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
   z-index: 0;
   will-change: transform;
 }
@@ -25,21 +29,34 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.3);
+  filter: brightness(0.85);
 }
 
 .bgOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.6) 100%
+    to right,
+    var(--color-black) 0%,
+    rgba(0, 0, 0, 0.95) 15%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.2) 100%
   );
 }
 
-/* ---- Container Grid ---- */
+/* Soft left edge fade */
+.bgOverlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-black) 0%,
+    transparent 40%
+  );
+}
+
+/* ---- Container ---- */
 .container {
   position: relative;
   z-index: 2;
@@ -48,28 +65,28 @@
   margin: 0 auto;
   padding: 0 clamp(24px, 5vw, 80px);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 120px);
+  grid-template-columns: 42% 1fr;
+  gap: clamp(32px, 4vw, 80px);
   align-items: center;
   min-height: 100vh;
 }
 
-/* ---- Left Column — Text ---- */
+/* ---- Left Column — Text (42%) ---- */
 .textColumn {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .label {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-orange);
-  padding: 8px 16px;
-  border: 1px solid var(--color-orange);
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 68, 0, 0.5);
   border-radius: 100px;
   width: fit-content;
 }
@@ -84,29 +101,30 @@
 .headlineLine {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 72px);
+  font-size: clamp(32px, 4.2vw, 64px);
   font-weight: var(--font-weight-bold);
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--color-white);
 }
 
 .headlineLine:first-child {
   color: var(--color-off-white);
+  font-weight: var(--font-weight-medium);
 }
 
 .subtitle {
-  font-size: clamp(16px, 1.2vw, 20px);
+  font-size: clamp(15px, 1.1vw, 18px);
   font-weight: var(--font-weight-regular);
   color: var(--color-muted);
-  line-height: 1.6;
-  max-width: 480px;
+  line-height: 1.65;
+  max-width: 420px;
 }
 
 /* ---- CTA Buttons ---- */
 .ctaGroup {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-top: 8px;
   flex-wrap: wrap;
 }
@@ -116,8 +134,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  font-size: 14px;
+  padding: 13px 28px;
+  font-size: 13px;
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.02em;
   border-radius: 100px;
@@ -139,7 +157,7 @@
 .ctaSecondary {
   background: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .ctaSecondary:hover {
@@ -147,36 +165,36 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* ---- Right Column — Visual ---- */
+/* ---- Right Column — Visual Anchor ---- */
 .visualColumn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .logoSvg {
-  width: clamp(200px, 28vw, 400px);
+  width: clamp(220px, 28vw, 400px);
   height: auto;
   will-change: transform;
   pointer-events: none;
-  filter: drop-shadow(0 0 60px rgba(255, 68, 0, 0.15));
+  opacity: 0.9;
+  filter: drop-shadow(0 0 80px rgba(255, 68, 0, 0.12));
 }
 
 /* ---- Scroll Indicator ---- */
 .scrollIndicator {
   position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: clamp(24px, 5vw, 80px);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   z-index: 2;
 }
 
 .scrollText {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -184,20 +202,22 @@
 }
 
 .scrollLine {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--color-orange), transparent);
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-orange), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
   0%, 100% {
     opacity: 0.4;
-    transform: scaleY(0.6);
+    transform: scaleX(0.6);
+    transform-origin: left;
   }
   50% {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
@@ -205,41 +225,52 @@
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     padding-top: 120px;
     padding-bottom: 100px;
     min-height: auto;
   }
 
+  .bgWrapper {
+    width: 100%;
+    opacity: 0.3;
+  }
+
+  .bgOverlay {
+    background: linear-gradient(
+      to bottom,
+      var(--color-black) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      var(--color-black) 100%
+    );
+  }
+
+  .bgOverlay::before {
+    display: none;
+  }
+
+  .visualColumn {
+    display: none;
+  }
+
   .textColumn {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .subtitle {
     max-width: 560px;
   }
 
-  .ctaGroup {
-    justify-content: center;
-  }
-
-  .visualColumn {
-    order: -1;
-    margin-bottom: 20px;
-  }
-
-  .logoSvg {
-    width: clamp(120px, 30vw, 180px);
-  }
-
   .scrollIndicator {
     bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 640px) {
   .headlineLine {
-    font-size: clamp(28px, 8vw, 48px);
+    font-size: clamp(28px, 8vw, 44px);
   }
 
   .ctaGroup {
