@@ -82,3 +82,13 @@ ul {
   background: var(--color-orange);
   color: var(--color-white);
 }
+
+/* ---- FOCUS VISIBLE ---- */
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}

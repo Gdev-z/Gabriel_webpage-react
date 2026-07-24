@@ -39,7 +39,7 @@ export default function LogoTicker() {
         <div className={styles.track}>
           {loop.map((src, i) => (
             <span key={i} className={styles.logoItem}>
-              <img src={src} alt="" className={styles.logo} />
+              <img src={src} alt="" className={styles.logo} loading="lazy" />
             </span>
           ))}
         </div>

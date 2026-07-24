@@ -41,12 +41,13 @@ export default function Footer() {
               src="assets/icon-star.svg"
               alt=""
               className={styles.brandLogo}
+              loading="lazy"
             />
             <span className={styles.brandName}>{site.name}</span>
           </motion.div>
 
           <motion.div className={styles.location} variants={fadeUp}>
-            <img src="assets/icon-circle.svg" alt="" className={styles.bullet} />
+            <img src="assets/icon-circle.svg" alt="" className={styles.bullet} loading="lazy" />
             <p>{footerContent.locationText}</p>
           </motion.div>
 
@@ -55,7 +56,7 @@ export default function Footer() {
               {time}
             </span>
             <div className={styles.clockMeta}>
-              <img src="assets/icon-globe.svg" alt="Globe icon" />
+              <img src="assets/icon-globe.svg" alt="Globe icon" loading="lazy" />
               <span>{site.timezoneLabel}</span>
             </div>
           </motion.div>
@@ -95,7 +96,7 @@ export default function Footer() {
               aria-label="Email"
             />
             <button type="submit" className={styles.newsletterSubmit} aria-label="Subscribe">
-              <img src="assets/chevron-left.svg" alt="" />
+              <img src="assets/chevron-left.svg" alt="" loading="lazy" />
             </button>
           </form>
         </motion.div>
@@ -122,7 +123,7 @@ export default function Footer() {
                 className={styles.socialLink}
               >
                 <span>{s.name}</span>
-                <img src="assets/chevron-right.svg" alt="" />
+                <img src="assets/chevron-right.svg" alt="" loading="lazy" />
               </a>
             </li>
           ))}
@@ -145,7 +146,7 @@ export default function Footer() {
 
       {/* Back to top */}
       <a href="#top" className={styles.backToTop} aria-label="Scroll back to top">
-        <img src="assets/chevron-up.svg" alt="" />
+        <img src="assets/chevron-up.svg" alt="" loading="lazy" />
       </a>
     </footer>
   )

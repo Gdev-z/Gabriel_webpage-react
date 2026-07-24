@@ -52,9 +52,14 @@ export const legalLinks = [
 
 /* ---- Hero ---- */
 export const hero = {
+  label: 'Full Stack Developer',
   headlineLines: ['Produtos digitais', 'de ponta a ponta.'],
   subtitle:
-    'Desenvolvedor Full Stack product-minded. Do wireframe ao deploy: design, front, back-end e hospedagem com uma pessoa só.',
+    'Do wireframe ao deploy: design, front, back-end e hospedagem — tudo com uma pessoa só.',
+  cta: [
+    { label: 'Ver projetos', href: '#highlights', primary: true },
+    { label: 'Falar comigo', href: 'https://wa.me/5513997581820', primary: false },
+  ],
 }
 
 /* ---- Intro ---- */
