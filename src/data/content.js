@@ -103,20 +103,6 @@ export const scrollingImages = [
 /* ---- Project Highlights (3 cards) ---- */
 export const projects = [
   {
-    name: 'Marca que vende',
-    client: 'Identidade + Site',
-    role: 'Design e front-end construídos do zero',
-    image: { src: 'assets/bg-abstract-shapes.png', alt: 'Identidade visual e site' },
-    href: '#',
-  },
-  {
-    name: 'App dentro da lei',
-    client: 'LGPD & Termos',
-    role: 'Back-end seguro + documentação de compliance',
-    image: { src: 'assets/logo-arpeggio-nav.jpg', alt: 'Plataforma em conformidade' },
-    href: '#',
-  },
-  {
     name: 'Site que aparece',
     client: 'SEO & Acessibilidade',
     role: 'Full Stack + otimização para busca',
@@ -125,6 +111,20 @@ export const projects = [
       alt: 'Site otimizado e acessível',
     },
     href: 'https://compativeis-v1.vercel.app/',
+  },
+  {
+    name: 'Plataformas Premium',
+    client: 'Plataforma de Projetos',
+    role: 'Full Stack — React + Node.js',
+    image: { src: 'assets/devclub.png', alt: 'DevClub plataforma de projetos' },
+    href: 'https://devclub-smoky.vercel.app/',
+  },
+  {
+    name: 'App dentro da lei',
+    client: 'LGPD & Termos',
+    role: 'Back-end seguro + documentação de compliance',
+    image: { src: 'assets/logo-arpeggio-nav.jpg', alt: 'Plataforma em conformidade' },
+    href: '#',
   },
 ]
 
