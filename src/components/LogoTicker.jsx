@@ -17,6 +17,10 @@ const tickerLogos = [
   'assets/icon-dots.svg',
   'assets/icon-pause.svg',
   'assets/icon-plus.svg',
+  'assets/javascript.svg',
+  'assets/node_js.svg',
+  'assets/React.svg',
+  'assets/Typescript.svg',
 ]
 
 export default function LogoTicker() {

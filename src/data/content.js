@@ -52,8 +52,8 @@ export const legalLinks = [
 
 /* ---- Hero ---- */
 export const hero = {
-  label: 'Full Stack Developer',
-  headlineLines: ['Produtos digitais', 'de ponta a ponta.'],
+  label: 'Tudo em um só lugar',
+  headlineLines: ['Desenvolvedor', 'Full Stack'],
   subtitle:
     'Do wireframe ao deploy: design, front, back-end e hospedagem — tudo com uma pessoa só.',
   cta: [
@@ -114,7 +114,7 @@ export const projects = [
   },
   {
     name: 'Plataformas Premium',
-    client: 'Plataforma de Projetos',
+    client: 'DevClub — comunidade de devs',
     role: 'Full Stack — React + Node.js',
     image: { src: 'assets/devclub.png', alt: 'DevClub plataforma de projetos' },
     href: 'https://devclub-smoky.vercel.app/',
@@ -141,7 +141,7 @@ export const achievements = {
 export const videoReel = {
   titleLines: [
     { text: 'Tem um projeto', accent: false },
-    { text: 'pra gente construir?', accent: true },
+    { text: 'para eu construir?', accent: true },
   ],
   subtitle:
     'Me conta o que você precisa. Eu traduzo em código, design e deploy.',
